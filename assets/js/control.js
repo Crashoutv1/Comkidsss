@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
             duration: 225
         },
         {
-            title: "Memphis - 9MM",
-            audioSrc: "assets/audio/9mmA.mp3",
-            videoSrc: "assets/bg/Crashout.mp4",
+            title: "Ye,- FRIED",
+            audioSrc: "assets/audio/FriedA.mp3",
+            videoSrc: "assets/bg/Fried.mp4",
             duration: 76
         }
     ];
