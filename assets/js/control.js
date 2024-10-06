@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             duration: 225
         },
         {
-            title: "Ye,- FRIED",
+            title: "Ye - FRIED",
             audioSrc: "assets/audio/FriedA.mp3",
             videoSrc: "assets/bg/Fried.mp4",
             duration: 76
