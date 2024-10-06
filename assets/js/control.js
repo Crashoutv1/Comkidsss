@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
             duration: 225
         },
         {
-            title: "Playboi Carti - ALL RED",
-            audioSrc: "assets/audio/Allred.mp3",
-            videoSrc: "assets/bg/red.mp4",
+            title: "Rich Amiri - One Cal",
+            audioSrc: "assets/audio/Rone2.mp3",
+            videoSrc: "assets/bg/Rone.mp4",
             duration: 225
         },
         {
