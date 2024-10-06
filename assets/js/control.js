@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             title: "Playboi Carti - ALL RED",
-            audioSrc: "assets/audio/allred.mp3",
+            audioSrc: "assets/audio/Allred.mp3",
             videoSrc: "assets/bg/red.mp4",
             duration: 225
         },
         {
             title: "Memphis - 9MM",
-            audioSrc: "assets/audio/crashout.mp3",
+            audioSrc: "assets/audio/Crashout.mp3",
             videoSrc: "assets/bg/Crashout.mp4",
             duration: 76
         }
