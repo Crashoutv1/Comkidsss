@@ -1,4 +1,4 @@
-const rrr = ["@Crashout", "Fuck them com kids", "@Rich", "Lmfao you faggot"];
+const rrr = ["@Crashout", "owner", "@$$$", "Fuck them corny com kids", "Lmfao you faggot!"];
 let vvv = 0;
 
 function yyy() {

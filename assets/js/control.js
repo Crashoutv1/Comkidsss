@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", function() {
             duration: 225
         },
         {
-            title: "Rich Amiri - One Cal",
-            audioSrc: "assets/audio/Rone2.mp3",
-            videoSrc: "assets/bg/Rone.mp4",
+            title: "Playboi Carti - ALL RED",
+            audioSrc: "assets/audio/Allred.mp3",
+            videoSrc: "assets/bg/red.mp4",
             duration: 225
         },
         {
-            title: "Ye - FRIED",
-            audioSrc: "assets/audio/FriedA.mp3",
-            videoSrc: "assets/bg/Fried.mp4",
+            title: "Memphis - 9MM",
+            audioSrc: "assets/audio/Crashout.mp3",
+            videoSrc: "assets/bg/Crashout.mp4",
             duration: 76
         }
     ];
