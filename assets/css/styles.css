@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'MCFont';
+    src: url('PirataOne-Regular.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'MCFont', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    color: #cccccc;
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.cta-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+.bios {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.bio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bio-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.bio-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.biotext {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
