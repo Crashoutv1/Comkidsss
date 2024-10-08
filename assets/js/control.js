@@ -1,55 +1,47 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     var audio = document.getElementById("audio"),
         video = document.getElementById("video"),
         musicSlider = document.querySelector(".music-slider"),
         sliderProgress = document.querySelector(".slider-progress"),
-        pauseButton = document.querySelector(".pause-button img"),
-        currentTimeDisplay = document.querySelector(".current-time"),
-        totalDurationDisplay = document.querySelector(".total-duration"),
+        pauseButton = document.querySelector(".pause-button"),
+        currentTime = document.querySelector(".current-time"),
+        totalDuration = document.querySelector(".total-duration"),
         songTitle = document.querySelector(".song-title"),
-        forwardButton = document.querySelector(".forward-button img"),
-        backwardButton = document.querySelector(".backward-button img"),
-        enterButton = document.getElementById("enter"),
-        playButton = document.querySelector(".pause-button img.play-icon"); // Reference to the play button
+        forwardButton = document.querySelector(".forward-button"),
+        backwardButton = document.querySelector(".backward-button");
 
-    var playlist = [
-        {
-            title: "41 - Or What",
-            audioSrc: "assets/audio/orwhataudio.mp3",
-            videoSrc: "assets/bg/orwhat.mp4",
-            duration: 78
-        },
-        {
-            title: "Yeat - Poppin",
-            audioSrc: "assets/audio/PopAudio.mp3",
-            videoSrc: "assets/bg/Yeatpoppin.mp4",
-            duration: 225
-        },
-        {
-            title: "LUCKI - New Drank",
-            audioSrc: "assets/audio/LuckiNewDrank.mp3",
-            videoSrc: "assets/bg/newdrank.mp4",
-            duration: 225
-        },
-        {
-            title: "Real Boston Richey - Help Me",
-            audioSrc: "assets/audio/Helpme.mp3",
-            videoSrc: "assets/bg/realboston.mp4",
-            duration: 225
-        },
-        {
-            title: "Playboi Carti - ALL RED",
-            audioSrc: "assets/audio/Allred.mp3",
-            videoSrc: "assets/bg/red.mp4",
-            duration: 225
-        },
-        {
-            title: "Memphis - 9MM",
-            audioSrc: "assets/audio/Crashout.mp3",
-            videoSrc: "assets/bg/Crashout.mp4",
-            duration: 76
-        }
-    ];
+    var playlist = [{
+        title: "41 - Or What",
+        audioSrc: "assets/audio/orwhataudio.mp3",
+        videoSrc: "assets/bg/orwhat.mp4",
+        duration: 78
+    }, {
+        title: "Yeat - Poppin",
+        audioSrc: "assets/audio/PopAudio.mp3",
+        videoSrc: "assets/bg/Yeatpoppin.mp4",
+        duration: 225
+    }, {
+        title: "GLORB - EUGENE",
+        audioSrc: "assets/audio/s5.mp3",
+        videoSrc: "assets/bg/s5.mp4",
+        duration: 225
+    }, {
+        title: "LUCKI - New Drank",
+        audioSrc: "assets/audio/LuckiNewDrank.mp3",
+        videoSrc: "assets/bg/newdrank.mp4",
+        duration: 225
+    }, {
+        title: "Real Boston Richey - Help Me",
+        audioSrc: "assets/audio/Helpme.mp3",
+        videoSrc: "assets/bg/realboston.mp4",
+        duration: 225
+    }, {
+        title: "Playboi Carti - ALL RED",
+        audioSrc: "assets/audio/Allred.mp3",
+        videoSrc: "assets/bg/red.mp4",
+        duration: 76
+    }];
 
     var currentIndex = 0;
 
@@ -58,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
         audio.src = song.audioSrc;
         video.src = song.videoSrc;
         songTitle.textContent = song.title;
-        totalDurationDisplay.textContent = formatTime(song.duration);
+        totalDuration.textContent = formatTime(song.duration);
         audio.currentTime = 0;
         updateProgressBar();
         updateTimes();
@@ -68,64 +60,68 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateProgressBar() {
-        let progress = (audio.currentTime / audio.duration) * 100;
-        sliderProgress.style.width = `${progress}%`;
+        let e = (audio.currentTime / audio.duration) * 100;
+        sliderProgress.style.width = `${e}%`;
     }
 
     function togglePlayPause() {
+        let e = document.querySelector(".pause-icon"),
+            t = document.querySelector(".play-icon");
         if (audio.paused) {
-            audio.play().catch((error) => {
-                console.error("Error playing audio:", error);
-            });
-            video.play().catch((error) => {
-                console.error("Error playing video:", error);
-            });
+            audio.play();
+            video.play();
+            e.style.display = "block";
+            t.style.display = "none";
         } else {
             audio.pause();
             video.pause();
+            e.style.display = "none";
+            t.style.display = "block";
         }
-        updatePlayPauseIcons();
     }
 
     function updateTimes() {
-        currentTimeDisplay.textContent = formatTime(audio.currentTime);
-        totalDurationDisplay.textContent = formatTime(audio.duration);
+        let e = formatTime(audio.currentTime),
+            t = formatTime(audio.duration);
+        currentTime.textContent = e;
+        totalDuration.textContent = t;
     }
 
-    function formatTime(seconds) {
-        return `${Math.floor(seconds / 60)}:${Math.floor(seconds % 60).toString().padStart(2, "0")}`;
+    function formatTime(e) {
+        return `${Math.floor(e / 60)}:${Math.floor(e % 60)
+            .toString()
+            .padStart(2, "0")}`;
     }
 
     function updatePlayPauseIcons() {
-        let pauseIcon = document.querySelector(".pause-icon"),
-            playIcon = document.querySelector(".play-icon");
-        pauseIcon.style.display = audio.paused ? "none" : "block";
-        playIcon.style.display = audio.paused ? "block" : "none";
+        let e = document.querySelector(".pause-icon"),
+            t = document.querySelector(".play-icon");
+        if (audio.paused) {
+            e.style.display = "none";
+            t.style.display = "block";
+        } else {
+            e.style.display = "block";
+            t.style.display = "none";
+        }
     }
 
     audio.addEventListener("loadedmetadata", function() {
-        totalDurationDisplay.textContent = formatTime(audio.duration);
+        totalDuration.textContent = formatTime(audio.duration);
     });
-    audio.addEventListener("timeupdate", function() {
-        updateProgressBar();
-        updateTimes();
-    });
-
-    playButton.addEventListener("click", function() {
-        togglePlayPause();
-    });
-
+    audio.addEventListener("timeupdate", updateProgressBar);
+    audio.addEventListener("timeupdate", updateTimes);
     pauseButton.addEventListener("click", togglePlayPause);
 
     musicSlider.addEventListener("click", function(e) {
-        let rect = musicSlider.getBoundingClientRect(),
-            clickPosition = e.clientX - rect.left,
-            percentage = clickPosition / rect.width;
-        audio.currentTime = percentage * audio.duration;
+        let t = musicSlider.getBoundingClientRect(),
+            o = e.clientX - t.left,
+            i = (o / t.width) * 100;
+        audio.currentTime = (i / 100) * audio.duration;
     });
 
-    enterButton.addEventListener("click", function() {
-        this.remove();
+    document.getElementById("enter").addEventListener("click", function() {
+        let e = document.getElementById("enter");
+        e.remove();
         loadSong(currentIndex);
     });
 
@@ -143,4 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
         currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
         loadSong(currentIndex);
     });
+
+    loadSong(currentIndex);
 });
