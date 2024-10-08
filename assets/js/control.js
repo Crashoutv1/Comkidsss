@@ -111,19 +111,17 @@ document.addEventListener("DOMContentLoaded", function() {
         updateTimes();
     });
 
-    // Add click event listener for play button
     playButton.addEventListener("click", function() {
-        togglePlayPause(); // Calls togglePlayPause to play or pause
+        togglePlayPause();
     });
 
     pauseButton.addEventListener("click", togglePlayPause);
 
-    // Time skip functionality
     musicSlider.addEventListener("click", function(e) {
         let rect = musicSlider.getBoundingClientRect(),
             clickPosition = e.clientX - rect.left,
-            percentage = clickPosition / rect.width; // Calculate click position as a percentage of the slider width
-        audio.currentTime = percentage * audio.duration; // Set audio currentTime based on click position
+            percentage = clickPosition / rect.width;
+        audio.currentTime = percentage * audio.duration;
     });
 
     enterButton.addEventListener("click", function() {
@@ -145,6 +143,4 @@ document.addEventListener("DOMContentLoaded", function() {
         currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
         loadSong(currentIndex);
     });
-
-    loadSong(currentIndex);
 });
