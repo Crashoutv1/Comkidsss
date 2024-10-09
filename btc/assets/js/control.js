@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         title: "$UICIDEBOY$ - MATTE BLACK",
         audioSrc: "assets/audio/Matt.mp3",
         videoSrc: "assets/bg/Matt.mp4",
-        duration: 78
+        duration: 343
     }, {
         title: "BabyTron - Forever $cams",
         audioSrc: "assets/audio/Forever.mp3",
