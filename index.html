@@ -35,21 +35,6 @@
   <div id="visitor-count">Visitor count: 1</div>
 
   <script src="assets/js/scripts.js"></script>
-  <script>
-
-    function updateVisitorCount() {
-
-      if (!sessionStorage.getItem('hasVisited')) {
-
-        sessionStorage.setItem('hasVisited', 'true');
-        
-
-        document.getElementById('visitor-count').innerText = "Visitor count: 1";
-      }
-    }
-
-
-    window.onload = updateVisitorCount;  </script>
 
 </body>
 </html>
