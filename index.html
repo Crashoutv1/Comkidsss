@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comkids</title>
   <link rel="stylesheet" href="assets/css/styles.css">
-
+  <script src="assets/js/scripts.js" defer></script> 
 </head>
 <body>
+  <div id="discord-section">
+    <button onclick="window.location.href='https://discord.gg/JgezKXQA66'">DISCORD</button>
+  </div>
+
   <div id="loading-screen">
     <div class="loading-animation">
       <div></div>
@@ -16,6 +20,11 @@
     </div>
     <p>Loading...</p>
   </div>
+
+  <audio id="backgroundAudio">
+    <source src="assets/audio/intro.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <div id="main-content" class="hidden">
     <header>
@@ -36,11 +45,6 @@
     <footer>
     </footer>
   </div>
-
-
-  <div id="visitor-count"></div>
-
-  <script src="assets/js/scripts.js"></script>
 
 </body>
 </html>
